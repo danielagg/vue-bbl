@@ -5,10 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "backend": "nodemon ./backend/server.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "core-js": "^3.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "2.0.2",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
