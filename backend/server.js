@@ -17,7 +17,8 @@ app.post("/api/login", (req, res) => {
 });
 
 app.get("/api/contracts", (req, res) => {
-  res.status(200).json(contracts);
+  // mimick slow performance with a 3s delay
+  setTimeout(() => res.status(200).json(contracts), 3000);
 });
 
 app.post("/api/contract/:id", (req, res) => {
