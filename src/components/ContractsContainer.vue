@@ -2,16 +2,24 @@
   <div>
     <LoadingContracts v-if="isLoading" :userName="userName" />
     <div v-else>
-      <router-link to="/">Home</router-link>|
-      <router-link to="/contracts">Contracts</router-link>
-      <h1>This is an about page</h1>
-      <h1>{{userName}}</h1>
+      <nav>
+        <router-link to="/">Home</router-link>|
+        <router-link to="/contracts">Contracts</router-link>
+      </nav>
+      <div class="wrapper">
+        <ContractList />
+        <ContractDetails />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import LoadingContracts from "./LoadingContracts";
+import ContractList from "./ContractList";
+import ContractDetails from "./ContractDetails";
+
 export default {
   props: {
     userName: {
@@ -20,12 +28,25 @@ export default {
     }
   },
   components: {
-    LoadingContracts
+    LoadingContracts,
+    ContractList,
+    ContractDetails
   },
   data() {
     return {
-      isLoading: true
+      contracts: [],
+      selectedContract: null
     };
+  },
+  computed: {
+    isLoading: function() {
+      return !this.contracts.length;
+    }
+  },
+  async created() {
+    const result = await axios.get("http://localhost:8888/api/contracts");
+    this.contracts = result.data;
+    this.selectedContract = this.contracts[0];
   }
 };
 </script>
