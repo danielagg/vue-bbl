@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/api/login", (req, res) => {
   if (req.body.email.toUpperCase() === "DANIEL.AGG@XS.NESTLE.COM") {
-    res.status(200).json({ userId: 1, name: "Daniel" });
+    res.status(200).json({ userId: 1, firstName: "Daniel" });
   } else {
     res.sendStatus(401);
   }
