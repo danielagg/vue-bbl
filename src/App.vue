@@ -33,6 +33,8 @@ input {
 
 :root {
   --primary-color: #873fe6;
+  --primary-color-light: #ae7bf1;
+  --primary-color-dark: #642bad;
 }
 
 h1,

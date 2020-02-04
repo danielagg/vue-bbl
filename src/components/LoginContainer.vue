@@ -4,11 +4,9 @@
       <h1>Contract Manager</h1>
       <p>Please enter your credentials.</p>
 
-      <form>
-        <input type="text" name="email" placeholder="Email address..." />
-        <input type="password" name="password" placeholder="Password..." />
-        <input type="submit" value="Login" @click="onSubmit" />
-      </form>
+      <input type="text" name="email" placeholder="Email address..." v-model="email" />
+      <input type="password" name="password" placeholder="Password..." v-model="password" />
+      <button type="submit" class="button button-one" @click="onSubmit">Login</button>
     </section>
   </div>
 </template>
@@ -17,13 +15,26 @@
 import axios from "axios";
 
 export default {
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
   methods: {
     onSubmit: async function(e) {
       e.preventDefault();
-      const result = await axios.post("/api/login", {
-        email: "asdsad"
-      });
-      alert(result);
+
+      // put logged in user into global state
+      await axios
+        .post("http://localhost:8888/api/login", {
+          email: this.email
+        })
+        .catch(() => {
+          alert("Something went wrong");
+        });
+
+      this.$router.push("/contracts");
     }
   }
 };
@@ -71,14 +82,39 @@ input:focus {
   background: #eeeeee;
 }
 
-input[type="submit"] {
+.button {
   border: none;
-  margin-top: 2rem;
+  font-size: 1.1rem;
+  margin-top: 3rem;
   border-radius: 600px;
-  max-width: 50%;
-  padding: 1rem;
+  padding: 1.2rem;
+  min-width: 50%;
   background: var(--primary-color);
   color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  border-radius: 600px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color-light);
+  z-index: -1;
+  transition: transform 100ms ease-out;
+  transform: scaleY(0);
+}
+
+.button:hover::after {
+  transform: scaleY(1);
 }
 </style>
