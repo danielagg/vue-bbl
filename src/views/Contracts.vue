@@ -1,7 +1,18 @@
 <template>
-  <div class="about">
-    <router-link to="/">Home</router-link>|
-    <router-link to="/contracts">Contracts</router-link>
-    <h1>This is an about page</h1>
-  </div>
+  <ContractsContainer :userName="userName" />
 </template>
+
+<script>
+import ContractsContainer from "../components/ContractsContainer";
+export default {
+  props: {
+    userName: {
+      type: String,
+      default: "Guest"
+    }
+  },
+  components: {
+    ContractsContainer
+  }
+};
+</script>

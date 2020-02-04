@@ -26,7 +26,7 @@ export default {
       e.preventDefault();
 
       // put logged in user into global state
-      await axios
+      const result = await axios
         .post("http://localhost:8888/api/login", {
           email: this.email
         })
@@ -34,7 +34,12 @@ export default {
           alert("Something went wrong");
         });
 
-      this.$router.push("/contracts");
+      this.$router.push({
+        name: "contracts",
+        params: {
+          userName: result.data.firstName
+        }
+      });
     }
   }
 };
