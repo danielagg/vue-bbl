@@ -2,10 +2,18 @@
   <div>
     <LoadingContracts v-if="isLoading" :userName="userName" />
     <div v-else>
-      <nav>
-        <router-link to="/">Home</router-link>|
-        <router-link to="/contracts">Contracts</router-link>
-      </nav>
+      <div class="top-bar">
+        <h1>Contract Manager</h1>
+        <nav>
+          <li>
+            <router-link to="/">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/contracts">Contracts</router-link>
+          </li>
+        </nav>
+      </div>
+
       <div class="wrapper">
         <ContractList />
         <ContractDetails />
@@ -52,4 +60,29 @@ export default {
 </script>
 
 <style scoped>
+.top-bar {
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+}
+
+.top-bar h1 {
+  font-size: 1rem;
+  color: white;
+}
+
+li {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
 </style>

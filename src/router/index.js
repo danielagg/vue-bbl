@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import LoginContainer from "../components/LoginContainer";
-import ContractsContainer from "../components/ContractsContainer.vue";
+import ContractsContainer from "../components/contracts/ContractsContainer.vue";
 
 Vue.use(VueRouter);
 
