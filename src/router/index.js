@@ -1,19 +1,19 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Landing from "../views/Landing.vue";
-import Contracts from "../views/Contracts.vue";
+import LoginContainer from "../components/LoginContainer";
+import ContractsContainer from "../components/ContractsContainer.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    component: Landing
+    component: LoginContainer
   },
   {
     path: "/contracts",
     name: "contracts",
-    component: Contracts,
+    component: ContractsContainer,
     props: true
   }
 ];

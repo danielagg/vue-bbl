@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <BounceLoader color="#fff" />
-    <h1>Hang on a sec, {{userName}}</h1>
+    <h1>Hang on a sec, {{ userName }}.</h1>
     <p>We are fetching contracts.</p>
   </div>
 </template>
