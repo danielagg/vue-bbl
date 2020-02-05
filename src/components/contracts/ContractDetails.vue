@@ -9,12 +9,12 @@
       <hr>
     </div>
      <div class="details">
-      <div>
+      <div class="details-left">
         <h2 class="price">{{ selectedContract.price }}</h2>
         <h2 class="currency">{{ selectedContract.currency }}</h2>
-        <h2 class="currency">{{ selectedContract.agreementType }} Agreement</h2>
-        <h2 class="currency">Purchasing Org:{{ selectedContract.purchaseOrg }}</h2>
-        <h2 class="currency">Incoterm:{{ selectedContract.incoterm }}</h2>
+        <h2 class="agreementType">{{ selectedContract.agreementType }} Agreement</h2>
+        <h2 class="purchaseOrg"><span>Purchasing Org:</span> {{ selectedContract.purchaseOrg }}</h2>
+        <h2 class="incoterm"><span>Incoterm:</span> {{ selectedContract.incoterm }}</h2>
       </div>
       <div>
         {{ selectedContract.desc }}
@@ -64,6 +64,39 @@ hr {
 }
 
 .details {
+  margin-top: 2rem;
   display: flex;
+  color: #707070;
+}
+
+.details h2 {
+  font-weight: 400;
+  color: #707070;
+}
+
+.details-left {
+  min-width: 35%;
+}
+
+.price {
+  font-size: 2.8rem;
+}
+
+.currency {
+  margin-top: -0.5rem;
+}
+
+.agreementType {
+   font-size: 2rem;
+   margin-top: 2rem;
+}
+
+.purchaseOrg, .incoterm {
+  font-size: 1.1rem;
+}
+
+.purchaseOrg span,
+.incoterm span {
+  font-weight: 700;
 }
 </style>
