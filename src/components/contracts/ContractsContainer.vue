@@ -15,7 +15,12 @@
       </div>
 
       <div class="wrapper">
-        <ContractList class="contract-list" :contracts="contracts" />
+        <ContractList
+          class="contract-list"
+          :contracts="contracts"
+          :selectedContract="selectedContract"
+          :setSelectedContract="setSelectedContract"
+        />
         <ContractDetails class="contract-details" />
       </div>
     </div>
@@ -49,6 +54,11 @@ export default {
   computed: {
     isLoading: function() {
       return !this.contracts.length;
+    }
+  },
+  methods: {
+    setSelectedContract: function(contract) {
+      this.selectedContract = contract;
     }
   },
   async created() {

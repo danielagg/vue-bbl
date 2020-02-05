@@ -2,7 +2,12 @@
   <div class="container">
     <h1>Contracts</h1>
     <ul>
-      <li v-for="(contract, index) in contracts" :key="index">
+      <li
+        v-for="(contract, index) in contracts"
+        :key="index"
+        :class="[(selectedContract === contract) ? activeClass : '']"
+        @click="onClick(contract)"
+      >
         <span class="contract-id">{{ contract.id }}</span>
         <p class="supplied-by">
           Supplied by
@@ -19,6 +24,24 @@ export default {
     contracts: {
       type: Array,
       required: true
+    },
+    selectedContract: {
+      type: Object,
+      required: true
+    },
+    setSelectedContract: {
+      type: Function,
+      required: true
+    }
+  },
+  data() {
+    return {
+      activeClass: "activeClass"
+    };
+  },
+  methods: {
+    onClick: function(contract) {
+      this.setSelectedContract(contract);
     }
   }
 };
@@ -46,17 +69,13 @@ ul {
 
 li {
   list-style: none;
-  padding: 1rem 1rem 1rem 3.5rem;
+  padding: 1.2rem 1rem 1.2rem 3.5rem;
   cursor: pointer;
-  transition: background 100ms linear;
+  opacity: 0.75;
 }
 
 li:hover {
   background: white;
-}
-
-li:not(:first-child) {
-  margin-top: 0.5rem;
 }
 
 .contract-id {
@@ -71,5 +90,12 @@ li:not(:first-child) {
 .supplier {
   color: var(--primary-color);
   font-weight: 700;
+}
+
+.activeClass {
+  background: white;
+  border-left: 12px solid var(--primary-color);
+  padding-left: calc(3.5rem - 12px);
+  opacity: 1;
 }
 </style>
