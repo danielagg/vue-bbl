@@ -49,7 +49,8 @@ export default {
 
 <style scoped>
 .container {
-  background: #ececec;
+  background: #F9F9F9;
+  border-right: 1px solid #CBCBCB;
   overflow: scroll;
   overflow-x: hidden;
   max-height: calc(100vh - 55px);

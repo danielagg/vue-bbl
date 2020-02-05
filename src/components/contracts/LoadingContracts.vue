@@ -26,8 +26,8 @@ export default {
   background: var(--primary-color);
   background: linear-gradient(
     153deg,
-    var(--primary-color) 0%,
-    rgb(46, 43, 112) 100%
+    #5F6CDF 0%,
+    #660FA0 100%
   );
   color: white;
   min-height: 100vh;

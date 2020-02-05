@@ -32,9 +32,8 @@ input {
 }
 
 :root {
-  --primary-color: #873fe6;
-  --primary-color-light: #ae7bf1;
-  --primary-color-dark: #642bad;
+  --primary-color: #660FA0;
+  --primary-color-light: #5F6CDF;
 }
 
 h1,
