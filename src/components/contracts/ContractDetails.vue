@@ -27,6 +27,7 @@ export default {
 .contract-id {
   font-size: 4rem;
   font-weight: 400;
+  letter-spacing: var(--letter-spacing);
 }
 
 .supplied-by {

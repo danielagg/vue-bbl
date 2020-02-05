@@ -49,9 +49,7 @@ export default {
 
 <style scoped>
 .container {
-  background: #F9F9F9;
-  border-right: 1px solid #CBCBCB;
-  overflow: scroll;
+  background: #F2F2F2;
   overflow-x: hidden;
   max-height: calc(100vh - 55px);
 }
@@ -60,7 +58,8 @@ h1 {
   font-size: 2.6rem;
   padding: 2rem;
   color: #5e5e5e;
-  font-weight: 400;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
 }
 
 ul {
@@ -99,4 +98,19 @@ li:hover {
   padding-left: calc(3.5rem - 12px);
   opacity: 1;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #e4e4e4;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  margin-top: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-light);
+}
+
 </style>

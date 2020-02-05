@@ -69,6 +69,10 @@ section {
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
+h1 {
+    letter-spacing: var(--letter-spacing);
+}
+
 form {
   margin-top: 1rem;
 }

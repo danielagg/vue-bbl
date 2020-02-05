@@ -34,6 +34,7 @@ input {
 :root {
   --primary-color: #660FA0;
   --primary-color-light: #5F6CDF;
+  --letter-spacing: -2px;
 }
 
 h1,

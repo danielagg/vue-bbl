@@ -39,6 +39,7 @@ export default {
 
 h1 {
   margin-top: 2rem;
+  letter-spacing: var(--letter-spacing);
 }
 p {
   margin: 0;
