@@ -62,7 +62,7 @@ export default {
 section {
   background: white;
   border-radius: 10px;
-  width: 30%;
+  width: 35%;
   min-height: 35vh;
   padding: 3rem;
   text-align: center;
