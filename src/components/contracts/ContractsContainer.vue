@@ -15,8 +15,8 @@
       </div>
 
       <div class="wrapper">
-        <ContractList />
-        <ContractDetails />
+        <ContractList class="contract-list" :contracts="contracts" />
+        <ContractDetails class="contract-details" />
       </div>
     </div>
   </div>
@@ -62,6 +62,7 @@ export default {
 <style scoped>
 .top-bar {
   background: var(--primary-color);
+  height: 55px;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -84,5 +85,18 @@ li {
 li a {
   color: white;
   text-decoration: none;
+}
+
+.wrapper {
+  min-height: calc(100vh - 55px);
+  display: flex;
+}
+
+.contract-list {
+  width: 30%;
+}
+
+.contract-details {
+  width: 70%;
 }
 </style>
