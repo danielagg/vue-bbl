@@ -21,7 +21,7 @@
           :selectedContract="selectedContract"
           :setSelectedContract="setSelectedContract"
         />
-        <ContractDetails class="contract-details" />
+        <ContractDetails class="contract-details" :selectedContract="selectedContract" />
       </div>
     </div>
   </div>
