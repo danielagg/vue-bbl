@@ -21,17 +21,4 @@ app.get("/api/contracts", (req, res) => {
   setTimeout(() => res.status(200).json(contracts), 3000);
 });
 
-app.post("/api/contract/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const contract = contracts.filter(c => c.id === id);
-
-  if (!contract.length) res.sendStatus(404);
-
-  res.status(200).json({
-    ...contract[0],
-    targetQty: req.body.targetQty,
-    targetQtyUom: req.body.targetQtyUom
-  });
-});
-
 app.listen(8888, () => console.log("Server running on port 8888"));
