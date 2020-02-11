@@ -3,15 +3,9 @@
     <LoadingContracts v-if="isLoading" :userName="userName" />
     <div v-else>
       <div class="top-bar">
-        <h1>Contract Manager</h1>
-        <nav>
-          <li>
-            <router-link to="/">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/contracts">Contracts</router-link>
-          </li>
-        </nav>
+        <router-link to="/">
+          <h1>Contract Manager</h1>
+        </router-link>
       </div>
 
       <div class="wrapper">

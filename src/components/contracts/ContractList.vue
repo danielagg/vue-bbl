@@ -5,7 +5,7 @@
       <li
         v-for="(contract, index) in contracts"
         :key="index"
-        :class="[(selectedContract === contract) ? activeClass : '']"
+        :class="(selectedContract === contract) ? activeClass : ''"
         @click="onClick(contract)"
       >
         <span class="contract-id">{{ contract.id }}</span>
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .container {
-  background: #F2F2F2;
+  background: #f2f2f2;
   overflow-x: hidden;
   max-height: calc(100vh - 55px);
 }
@@ -112,5 +112,4 @@ li:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color-light);
 }
-
 </style>
