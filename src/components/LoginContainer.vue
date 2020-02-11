@@ -6,7 +6,7 @@
 
       <input type="text" name="email" placeholder="Email address..." v-model="email" />
       <input type="password" name="password" placeholder="Password..." v-model="password" />
-      <button type="submit" class="button" @click="onSubmit">Login</button>
+      <button type="button" class="button" @click="onSubmit">Login</button>
     </section>
   </div>
 </template>
@@ -21,10 +21,9 @@ export default {
       password: ""
     };
   },
-  methods: {
-    onSubmit: async function(e) {
-      e.preventDefault();
 
+  methods: {
+    onSubmit: async function() {
       // put logged in user into global state
       const result = await axios
         .post("http://localhost:8888/api/login", {
