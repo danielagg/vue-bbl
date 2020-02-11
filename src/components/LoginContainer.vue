@@ -6,7 +6,7 @@
 
       <input type="text" name="email" placeholder="Email address..." v-model="email" />
       <input type="password" name="password" placeholder="Password..." v-model="password" />
-      <button type="submit" class="button button-one" @click="onSubmit">Login</button>
+      <button type="submit" class="button" @click="onSubmit">Login</button>
     </section>
   </div>
 </template>
@@ -48,11 +48,7 @@ export default {
 <style scoped>
 .container {
   background: var(--primary-color);
-  background: linear-gradient(
-    153deg,
-    #5F6CDF 0%,
-    #660FA0 100%
-  );
+  background: linear-gradient(153deg, #5f6cdf 0%, #660fa0 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -70,7 +66,7 @@ section {
 }
 
 h1 {
-    letter-spacing: var(--letter-spacing);
+  letter-spacing: var(--letter-spacing);
 }
 
 form {
